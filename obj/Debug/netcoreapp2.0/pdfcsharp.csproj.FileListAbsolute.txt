@@ -1,0 +1,11 @@
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\pdfcsharp.deps.json
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\pdfcsharp.runtimeconfig.json
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\pdfcsharp.runtimeconfig.dev.json
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\pdfcsharp.dll
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\pdfcsharp.pdb
+C:\Users\msc20\OneDrive\projects\pdfcsharp\obj\Debug\netcoreapp2.0\pdfcsharp.csproj.CoreCompileInputs.cache
+C:\Users\msc20\OneDrive\projects\pdfcsharp\obj\Debug\netcoreapp2.0\pdfcsharp.AssemblyInfoInputs.cache
+C:\Users\msc20\OneDrive\projects\pdfcsharp\obj\Debug\netcoreapp2.0\pdfcsharp.AssemblyInfo.cs
+C:\Users\msc20\OneDrive\projects\pdfcsharp\obj\Debug\netcoreapp2.0\pdfcsharp.dll
+C:\Users\msc20\OneDrive\projects\pdfcsharp\obj\Debug\netcoreapp2.0\pdfcsharp.pdb
+C:\Users\msc20\OneDrive\projects\pdfcsharp\bin\Debug\netcoreapp2.0\itextsharp.dll

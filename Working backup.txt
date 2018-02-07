@@ -1,0 +1,102 @@
+Backup of working version:
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+namespace PdfProperties
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // create a reader (constructor overloaded for path to local file or URL)
+            PdfReader reader
+                = new PdfReader("file:///C:/users/msc20/test.pdf");
+            // total number of pages
+            int n = reader.NumberOfPages;
+            // size of the first page
+            Rectangle psize = reader.GetPageSize(1);
+            float width = psize.Width;
+            float height = psize.Height;
+            Console.WriteLine("Size of page 1 of {0} => {1} × {2}", n, width, height);
+            // file properties
+            Dictionary<string, string> infodict = reader.Info;
+            foreach (KeyValuePair<string, string> kvp in infodict)
+                Console.WriteLine(kvp.Key + " => " + kvp.Value);
+        }
+    }
+}
+
+
+
+Vers 2
+
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
+
+namespace PdfProperties
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // create a reader (constructor overloaded for path to local file or URL)
+            PdfReader reader
+                = new PdfReader("c:/Users/msc20/test.pdf");
+            // total number of pages
+            int n = reader.NumberOfPages;
+            // size of the first page
+            Rectangle psize = reader.GetPageSize(1);
+            float width = psize.Width;
+            float height = psize.Height;
+            Console.WriteLine("Size of page 1 of {0} => {1} × {2}", n, width, height);
+            // file properties
+            Dictionary<string, string> infodict = reader.Info;
+            theReader myText = new theReader(); 
+          
+            string myTextResult =myText.ReadPdfFile("c:/Users/msc20/test.pdf"); 
+            Console.WriteLine("Start text"); 
+            Console.WriteLine(myTextResult); 
+            Console.WriteLine("End text"); 
+
+            foreach (KeyValuePair<string, string> kvp in infodict)
+                  Console.WriteLine(kvp.Key + " => " + kvp.Value);
+        
+          
+     }
+
+   }
+   class theReader
+   {
+ public string ReadPdfFile(string fileName)
+{
+    StringBuilder text = new StringBuilder();
+    if (File.Exists(fileName))
+    {
+        PdfReader pdfReader = new PdfReader(fileName);
+
+        for (int page = 1; page <= pdfReader.NumberOfPages; page++)
+        {
+            ITextExtractionStrategy strategy = new SimpleTextExtractionStrategy();
+            string currentText = PdfTextExtractor.GetTextFromPage(pdfReader, page, strategy);
+
+            currentText = Encoding.UTF8.GetString(ASCIIEncoding.Convert(Encoding.Default, Encoding.UTF8, Encoding.Default.GetBytes(currentText)));
+            text.Append(currentText);
+        }
+        pdfReader.Close();
+    }
+    return text.ToString();
+}
+
+     
+}
+
+}
